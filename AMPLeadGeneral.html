@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Ready to learn more?</title>
+<meta content="Answer a few quick questions and we'll tailor a plan for your practice." name="description"/>
+<meta content="#0b3a6b" name="theme-color"/>
+<style>
+    :root{
+      --blue:#0b3a6b;
+      --gold:#d4af37;
+      --ink:#0f172a;
+      --slate:#475569;
+      --bg:#f8fafc;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{max-width:760px;margin:0 auto;padding:22px 14px 72px}
+    header{text-align:center;padding:10px 0 4px}
+    .avatar{
+      width:92px;height:92px;margin:0 auto 8px;border-radius:50%;
+      border:2px solid var(--gold);overflow:hidden
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{margin:6px 0 4px;font-size:24px;color:var(--blue)}
+    .sub{color:var(--slate);font-size:14px;margin:0 auto 10px;max-width:46ch}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(11,58,107,.12);
+      border-radius:999px;padding:6px 10px;margin:6px 6px 0 0}
+    .card{background:var(--white);border:1px solid rgba(11,58,107,.12);border-radius:16px;box-shadow:0 2px 8px rgba(2,6,23,.06);padding:16px;margin:14px 0}
+    label{display:block;font-size:13px;font-weight:700;margin-bottom:4px;color:var(--blue)}
+    input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+      width:100%;padding:12px;border-radius:12px;border:1px solid rgba(2,6,23,.15);background:#fff;font-size:15px
+    }
+    textarea{min-height:88px;resize:vertical}
+    .grid-2{display:grid;gap:12px}
+    @media(min-width:640px){.grid-2{grid-template-columns:1fr 1fr}}
+    .grid-3{display:grid;gap:12px}
+    @media(min-width:780px){.grid-3{grid-template-columns:1fr 1fr 1fr}}
+    .checkgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(min-width:640px){.checkgrid{grid-template-columns:repeat(3,1fr)}}
+    .opt{background:#f9fafb;border:1px solid rgba(2,6,23,.08);border-radius:12px;padding:10px 12px}
+    .req{color:#dc2626}
+    .hint{font-size:12px;color:var(--slate)}
+    .actions{display:grid;gap:10px}
+    button{
+      appearance:none;border:0;border-radius:14px;background:linear-gradient(180deg,#0b3a6b,#082642);
+      color:#fff;font-weight:800;padding:14px 16px;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(11,58,107,.25)
+    }
+    button[disabled]{opacity:.5;cursor:not-allowed}
+    .success,.error{display:none;margin-top:10px;font-size:14px;padding:10px 12px;border-radius:10px}
+    .success{background:#f0fdf4;color:#14532d;border:1px solid rgba(22,163,74,.35)}
+    .error{background:#fef2f2;color:#7f1d1d;border:1px solid rgba(220,38,38,.35)}
+    .foot{margin-top:18px;text-align:center;color:var(--slate);font-size:12px}
+    .mini{font-size:12px;color:var(--slate)}
+    .stickybar{
+      position:sticky; bottom:0; z-index:5; background:rgba(248,250,252,.9);
+      backdrop-filter: blur(6px); padding:10px 12px; border-top:1px solid rgba(2,6,23,.07);
+      display:flex; align-items:center; justify-content:space-between; gap:10px
+    }
+    .stickybar .cta{
+      text-decoration:none; padding:10px 14px; border-radius:12px; font-weight:800; background:#fff; border:1px solid rgba(11,58,107,.2);
+    }
+    .stickybar .cta.primary{ background:linear-gradient(180deg,#0b3a6b,#082642); color:#fff; border:none }
+  </style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="avatar">
+<img alt="AMP Logo" src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/modified/01905d7a-6044-444f-9d27-bd6530451ab3.png?w=256" style="width:85%;height:85%;object-fit:contain;margin:auto;display:block;"/>
+</div>
+<h1>Ready to learn more?</h1>
+<p class="sub">Tell us about your practice. We’ll tailor a plan to add <strong>$20k–$50k+/mo</strong> in cash‑pay services.</p>
+<div>
+<span class="badge">📍 OC · IE · SD · Palm Springs · Imperial</span>
+<span class="badge">📞 (626) 482-1736</span>
+</div>
+</header>
+<form class="card" id="repForm" novalidate="">
+<!-- Honeypot -->
+<input aria-hidden="true" autocomplete="off" id="website" name="website" style="display:none" tabindex="-1" type="text"/>
+<div class="grid-2">
+<div>
+<label for="name">Full Name <span class="req">*</span></label>
+<input id="name" name="name" placeholder="Dr. Jane Smith" required="" type="text"/>
+</div>
+<div>
+<label for="practice">Practice / Business <span class="req">*</span></label>
+<input id="practice" name="practice" placeholder="Coastal Dermatology" required="" type="text"/>
+</div>
+</div>
+<div class="grid-2">
+<div>
+<label for="email">Work Email <span class="req">*</span></label>
+<input id="email" name="email" placeholder="name@clinic.com" required="" type="email"/>
+</div>
+<div>
+<label for="phone">Mobile <span class="req">*</span></label>
+<input id="phone" inputmode="tel" name="phone" placeholder="(555) 555-5555" required="" type="tel"/>
+</div>
+</div>
+<div class="grid-3">
+<div>
+<label for="city">City</label>
+<input id="city" name="city" placeholder="San Diego" type="text"/>
+</div>
+<div>
+<label for="state">State</label>
+<input id="state" name="state" placeholder="CA" type="text"/>
+</div>
+<div>
+<label for="zip">ZIP</label>
+<input id="zip" inputmode="numeric" name="zip" placeholder="92121" type="text"/>
+</div>
+</div>
+<div>
+<label>Role</label>
+<div class="checkgrid">
+<label class="opt"><input name="role" type="radio" value="Physician/DO/MD"/> Physician / DO / MD</label>
+<label class="opt"><input name="role" type="radio" value="NP/PA"/> NP / PA</label>
+<label class="opt"><input name="role" type="radio" value="RN/Provider"/> RN / Provider</label>
+<label class="opt"><input name="role" type="radio" value="Owner/Admin"/> Owner / Admin</label>
+<label class="opt"><input name="role" type="radio" value="Med Spa Manager"/> Med Spa Manager</label>
+<label class="opt"><input name="role" type="radio" value="Other"/> Other</label>
+</div>
+</div>
+<div>
+<label>What are you interested in? <span class="req">*</span></label>
+<div class="checkgrid">
+<label class="opt"><input name="interest" type="checkbox" value="NOUVADerm"/> NOUVADerm</label>
+<label class="opt"><input name="interest" type="checkbox" value="PlaDuo Pro"/> PlaDuo Pro</label>
+<label class="opt"><input name="interest" type="checkbox" value="Plasmage"/> Plasmage</label>
+<label class="opt"><input name="interest" type="checkbox" value="Scarlet SRF"/> Scarlet SRF</label>
+<label class="opt"><input name="interest" type="checkbox" value="AquafirmeXS"/> AquafirmeXS</label>
+<label class="opt"><input name="interest" type="checkbox" value="Alpha Pro"/> Alpha Pro</label>
+<label class="opt"><input name="interest" type="checkbox" value="EXOE"/> EXOE</label>
+<label class="opt"><input name="interest" type="checkbox" value="DERIVE"/> DERIVE</label>
+<label class="opt"><input name="interest" type="checkbox" value="Cellenis PRP"/> Cellenis PRP</label>
+<label class="opt"><input name="interest" type="checkbox" value="Cellenis Derma PRP"/> Cellenis Derma PRP</label>
+<label class="opt"><input name="interest" type="checkbox" value="AMP Growth Consultants"/> AMP Growth Consultants</label>
+<label class="opt"><input name="interest" type="checkbox" value="Clinical Integration Specialist"/> Clinical Integration Specialist</label>
+<label class="opt"><input name="interest" type="checkbox" value="Local Event/Masterclass/Demos"/> Local Event/Masterclass/Demos</label>
+<label class="opt"><input name="interest" type="checkbox" value="AMP Owner’s Summit (AOS)"/> AMP Owner’s Summit (AOS)</label>
+</div>
+<p class="hint">Pick as many as you like — we’ll customize the conversation.</p>
+</div>
+<div class="grid-2">
+<div>
+<label>Budget readiness</label>
+<select name="budget">
+<option value="">Select...</option>
+<option>Exploring</option>
+<option>Planning finance/lease</option>
+<option>Approved budget</option>
+<option>Ready to purchase</option>
+</select>
+</div>
+<div>
+<label>Timeline</label>
+<select name="timeline">
+<option value="">Select...</option>
+<option>ASAP (0–30 days)</option>
+<option>1–3 months</option>
+<option>3–6 months</option>
+<option>6+ months</option>
+</select>
+</div>
+</div>
+<div class="grid-2">
+<div>
+<label>Monthly cash-pay revenue goal</label>
+<select name="goal">
+<option value="">Select...</option>
+<option>$10k–$20k</option>
+<option>$20k–$50k</option>
+<option>$50k–$100k</option>
+<option>$100k+</option>
+</select>
+</div>
+<div>
+<label>Team size</label>
+<select name="team">
+<option value="">Select...</option>
+<option>Solo provider</option>
+<option>2–4 providers</option>
+<option>5–9 providers</option>
+<option>10+ providers</option>
+</select>
+</div>
+</div>
+<div class="grid-2">
+<div>
+<label>Preferred meeting type</label>
+<select name="meeting_type">
+<option value="">Select...</option>
+<option>Phone call</option>
+<option>Zoom</option>
+<option>In-office</option>
+</select>
+</div>
+<div>
+<label>Best day/time</label>
+<select name="best_time">
+<option value="">Select...</option>
+<option>Weekday — Morning</option>
+<option>Weekday — Afternoon</option>
+<option>Weekday — Evening</option>
+</select>
+</div>
+</div>
+<div>
+<label>Current services</label>
+<div class="checkgrid">
+<label class="opt"><input name="services" type="checkbox" value="Injectables"/> Injectables</label>
+<label class="opt"><input name="services" type="checkbox" value="RF microneedling / SRF"/> RF microneedling / SRF</label>
+<label class="opt"><input name="services" type="checkbox" value="IPL / Laser"/> IPL / Laser</label>
+<label class="opt"><input name="services" type="checkbox" value="Skincare / Peels"/> Skincare / Peels</label>
+<label class="opt"><input name="services" type="checkbox" value="Body (RF/Lipo/EM)"/> Body (RF/Lipo/EM)</label>
+<label class="opt"><input name="services" type="checkbox" value="Other"/> Other</label>
+</div>
+</div>
+<div>
+<label for="notes">What would make this a big win?</label>
+<textarea id="notes" name="notes" placeholder="e.g., launch device and book 40 tx/mo in 60 days; derm indications; team training; marketing push; membership build; etc."></textarea>
+</div>
+<!-- Hidden tracking -->
+<input name="rep_name" type="hidden" value="Juan Villalpando (AMP SoCal)"/>
+<input id="utm_source" name="utm_source" type="hidden"/>
+<input id="utm_medium" name="utm_medium" type="hidden"/>
+<input id="utm_campaign" name="utm_campaign" type="hidden"/>
+<input id="utm_content" name="utm_content" type="hidden"/>
+<input id="utm_term" name="utm_term" type="hidden"/>
+<input id="landing_page" name="landing_page" type="hidden"/>
+<input id="gclid" name="gclid" type="hidden"/>
+<label class="opt" style="display:flex;align-items:center;gap:8px;margin-top:10px">
+<input id="consent" name="consent" required="" type="checkbox"/>
+        I agree to be contacted by AMP about products and training. <span class="req">*</span>
+</label>
+<p class="mini">We never sell your data. Opt out anytime.</p>
+<div class="actions">
+<button disabled="" id="submitBtn" type="submit">Send to AMP SoCal</button>
+<div class="success" id="okMsg">Thanks! We’ve got it — we’ll reach out shortly.</div>
+<div class="error" id="errMsg">Please complete required fields or try again.</div>
+<div class="mini">~60 seconds to complete</div>
+</div>
+</form>
+<div class="card mini">
+<strong>How this works:</strong> set the <code>FORM_ENDPOINT</code> to your Google Sheets Apps Script (free) or Zapier/HubSpot endpoint. UTMs from your paid ad are captured automatically.
+      <div style="margin-top:6px">Direct contact: <a href="tel:+16264821736">(626) 482-1736</a> · <a href="mailto:juan.villalpando@amplifimd.com">juan.villalpando@amplifimd.com</a></div>
+<div style="margin-top:6px">📸 <a href="https://instagram.com/amp.socal" target="_blank">@amp.socal</a></div>
+<div style="margin-top:4px">📸 <a href="https://instagram.com/aestheticmanagementpartners" target="_blank">@aestheticmanagementpartners</a></div>
+<div style="margin-top:4px">🌐 <a href="https://aestheticmanagementpartners.com" target="_blank">aestheticmanagementpartners.com</a></div>
+</div>
+<footer class="foot">
+      © <span id="y"></span> Aesthetic Management Partners · Juan Villalpando · SoCal
+    </footer>
+</div>
+<div class="stickybar">
+<span class="mini">Questions? Call/Text Juan: <strong>(626) 482-1736</strong></span>
+<a class="cta" href="tel:+16264821736">Call</a>
+<a class="cta primary" href="#repForm">Start Form</a>
+</div>
+<script>
+    // Utility: URL params
+    function getParams(){
+      const p = new URLSearchParams(window.location.search);
+      const o = {}; p.forEach((v,k)=>o[k]=v); return o;
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Fill UTM/Tracking
+    const params = getParams();
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid'].forEach(id=>{
+      const el = document.getElementById(id); if(el && params[id]) el.value = params[id];
+    });
+    document.getElementById('landing_page').value = window.location.href.split('?')[0];
+
+    // Enable submit after short dwell + consent
+    const submitBtn = document.getElementById('submitBtn');
+    const consent = document.getElementById('consent');
+    let dwellOK=false;
+    setTimeout(()=>{ dwellOK=true; if(consent.checked) submitBtn.disabled=false; }, 2500);
+    consent.addEventListener('change', ()=>{ submitBtn.disabled = !(consent.checked && dwellOK); });
+
+    // Save progress locally
+    const form = document.getElementById('repForm');
+    const saveKey = 'amp_replead_rebuild_v1';
+    try{
+      const data = JSON.parse(localStorage.getItem(saveKey) || '{}');
+      if(Object.keys(data).length){
+        [...form.elements].forEach(el=>{
+          if(!el.name) return;
+          if(el.type==='checkbox'){
+            if(Array.isArray(data[el.name])) el.checked = data[el.name].includes(el.value);
+          } else if(el.type==='radio'){
+            el.checked = data[el.name]===el.value;
+          } else if(data[el.name]!==undefined){
+            el.value = data[el.name];
+          }
+        });
+      }
+    }catch(e){}
+    form.addEventListener('input', ()=>{
+      const obj={};
+      [...form.elements].forEach(el=>{
+        if(!el.name) return;
+        if(el.type==='checkbox'){
+          obj[el.name]=obj[el.name]||[]; if(el.checked) obj[el.name].push(el.value);
+        } else if(el.type==='radio'){
+          if(el.checked) obj[el.name]=el.value;
+        } else { obj[el.name]=el.value; }
+      });
+      localStorage.setItem(saveKey, JSON.stringify(obj));
+    });
+
+    // Submit
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const ok = document.getElementById('okMsg');
+      const err = document.getElementById('errMsg');
+      ok.style.display='none'; err.style.display='none';
+
+      const website = document.getElementById('website').value;
+      const name = document.getElementById('name').value.trim();
+      const practice = document.getElementById('practice').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const interest = [...document.querySelectorAll('input[name="interest"]:checked')].length;
+
+      if(website) return; // bot
+      if(!name || !practice || !email || !phone || !interest || !consent.checked){
+        err.textContent = 'Required: Name, Practice, Email, Mobile, ≥1 Interest, Consent.';
+        err.style.display='block';
+        return;
+      }
+
+      // Gather payload
+      const payload={};
+      [...form.elements].forEach(el=>{
+        if(!el.name) return;
+        if(el.type==='checkbox'){
+          payload[el.name]=payload[el.name]||[]; if(el.checked) payload[el.name].push(el.value);
+        } else if(el.type==='radio'){ if(el.checked) payload[el.name]=el.value; }
+        else { payload[el.name]=el.value; }
+      });
+      payload._ts = new Date().toISOString();
+      payload._ua = navigator.userAgent;
+
+      // Replace with your webhook / Apps Script URL
+      const FORM_ENDPOINT = 'https://example.com/your-webhook-endpoint';
+
+      try{
+        const resp = await fetch(FORM_ENDPOINT, {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+        });
+        if(resp.ok){
+          ok.style.display='block';
+          form.reset();
+          localStorage.removeItem(saveKey);
+          submitBtn.disabled=true; consent.checked=false;
+        }else{ throw new Error('Bad response'); }
+      }catch(ex){
+        // Fallback to mailto so you never lose a lead
+        const subject = encodeURIComponent('AMP Lead for Juan — ' + (payload.name || 'New'));
+        const body = encodeURIComponent(JSON.stringify(payload, null, 2));
+        window.location.href = `mailto:juan.villalpando@amplifimd.com?subject=${subject}&body=${body}`;
+        ok.style.display='block';
+      }
+    });
+  </script>
+</body>
+</html>
